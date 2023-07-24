@@ -32,6 +32,14 @@ async function handleRequest(request) {
     }
 
     await fetchLatestRun();
-    return Response.redirect(run, 302);
+    return Response("", {
+        status: 302,
+        headers: {
+            "X-Source":
+                "https://github.com/bobertbobert3/speedrunthingbutcloudflarelmao",
+            "Location": run,
+            "Cache-Control": "no-cache",
+        },
+    });
 }
-// bro has the most nonsensical commit messages i have ever seen 
+// bro has the most nonsensical commit messages i have ever seen
